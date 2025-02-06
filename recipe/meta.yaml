@@ -20,6 +20,8 @@ requirements:
     - flit-core 3.3.0
     - pip
     - python
+    - typing_extensions  # [py <= 37]
+    - tomli    # [py < 311]
   run:
     - python
     - nodeenv
@@ -27,8 +29,6 @@ requirements:
     - pyproject-metadata
     - rich
     - setuptools
-    - typing_extensions  # [py <= 37]
-    - tomli    # [py < 311]
 
 test:
   imports:
@@ -40,10 +40,14 @@ test:
 
 about:
   home: https://pypi.org/project/sphinx-theme-builder/
+  description: |
+    Streamline the Sphinx theme development workflow, by building upon existing standardised tools.
   summary: A tool for authoring Sphinx themes with a simple (opinionated) workflow.
   dev_url: https://github.com/pradyunsg/sphinx-theme-builder
   license: MIT
   license_file: LICENSE
+  license_family: MIT
+  doc_url: https://pypi.org/project/sphinx-theme-builder/
 
 extra:
   recipe-maintainers:
