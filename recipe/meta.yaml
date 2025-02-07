@@ -46,7 +46,7 @@ about:
   license: MIT
   license_file: LICENSE
   license_family: MIT
-  doc_url: https://pypi.org/project/sphinx-theme-builder/
+  doc_url: https://sphinx-theme-builder.readthedocs.io
 
 extra:
   recipe-maintainers:
