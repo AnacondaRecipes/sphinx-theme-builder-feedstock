@@ -26,8 +26,8 @@ requirements:
     - packaging
     - pyproject-metadata
     - rich
-    - typing_extensions  # [py <= 37]
-    - tomli    # [py < 311]
+    - typing_extensions  # [py<=37]
+    - tomli    # [py<311]
 
 test:
   imports:
