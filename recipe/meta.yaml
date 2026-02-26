@@ -11,8 +11,8 @@ source:
   sha256: 40b4bc2275b04d76781722c2e597770159e512f166986e1ceca1580a693f27bb
 
 build:
-  skip: true  # [py<310]
   number: 0
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
@@ -25,7 +25,7 @@ requirements:
     - diagnostic >=2.0.0
     - nodeenv
     - packaging
-    - pyproject-metadata >= 0.10.0
+    - pyproject-metadata >=0.10.0
     - rich
     - setuptools
     - tomli    # [py<311]
