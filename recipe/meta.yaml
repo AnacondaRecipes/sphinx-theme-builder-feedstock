@@ -1,5 +1,5 @@
 {% set name = "sphinx-theme-builder" %}
-{% set version = "0.2.0b2" %}
+{% set version = "0.3.2" %}
 
 
 package:
@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx-theme-builder-{{ version }}.tar.gz
-  sha256: e9cd98c2bb35bf414fe721469a043cdcc10f0808d1ffcf606acb4a6282a6f288
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 40b4bc2275b04d76781722c2e597770159e512f166986e1ceca1580a693f27bb
 
 build:
-  skip: true  # [py<37]
-  number: 1
+  number: 0
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
@@ -22,32 +22,32 @@ requirements:
     - python
   run:
     - python
+    - diagnostic >=2.0.0
     - nodeenv
     - packaging
-    - pyproject-metadata
+    - pyproject-metadata >=0.10.0
     - rich
     - setuptools
-    - typing_extensions  # [py<=37]
     - tomli    # [py<311]
 
 test:
   imports:
     - sphinx_theme_builder
-  commands:
-    - pip check
   requires:
     - pip
+  commands:
+    - pip check
 
 about:
   home: https://pypi.org/project/sphinx-theme-builder/
+  dev_url: https://github.com/pradyunsg/sphinx-theme-builder
+  doc_url: https://sphinx-theme-builder.readthedocs.io
+  summary: A tool for authoring Sphinx themes with a simple (opinionated) workflow.
   description: |
     Streamline the Sphinx theme development workflow, by building upon existing standardised tools.
-  summary: A tool for authoring Sphinx themes with a simple (opinionated) workflow.
-  dev_url: https://github.com/pradyunsg/sphinx-theme-builder
   license: MIT
-  license_file: LICENSE
   license_family: MIT
-  doc_url: https://sphinx-theme-builder.readthedocs.io
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
