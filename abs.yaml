@@ -3,3 +3,4 @@ build_env_vars:
 
 channels:
   - https://staging.continuum.io/pbp/fs/diagnostic-feedstock/pr1/360af0f
+  - https://staging.continuum.io/pbp/fs/pyproject-metadata-feedstock/pr6/9f3c524
